@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module';
 import { MongooseConfigModule } from './mongoose/mongoose.module';
 import { ThreadsModule } from './threads/threads.module';
 import { MessagesModule } from './messages/messages.module';
+import { ChatModule } from './chat/chat.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { MessagesModule } from './messages/messages.module';
     MongooseConfigModule,
     ThreadsModule,
     MessagesModule,
+    ChatModule,
   ],
   controllers: [AppController],
   providers: [AppService],

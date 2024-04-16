@@ -71,3 +71,11 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+## Model Funds
+The model is trained on the following funds.
+- VOO Vanguard S&P 500 ETF
+- BND Vanguard Total Bond Market ETF
+- VMEX FTSE BIVA Mexico Equity ETF
+- 
