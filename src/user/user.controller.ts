@@ -29,7 +29,6 @@ export class UserController {
 
   @Post('login')
   async login(@Body() loginDto: LoginDto): Promise<User> {
-    console.log('login');
     const user = await this.userService.findByEmail(loginDto.email);
 
     if (!user) {

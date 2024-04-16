@@ -5,9 +5,18 @@ import { AssistantsModule } from './assistants/assistants.module';
 import { OpenaiModule } from './openai/openai.module';
 import { UserModule } from './user/user.module';
 import { MongooseConfigModule } from './mongoose/mongoose.module';
+import { ThreadsModule } from './threads/threads.module';
+import { MessagesModule } from './messages/messages.module';
 
 @Module({
-  imports: [AssistantsModule, OpenaiModule, UserModule, MongooseConfigModule],
+  imports: [
+    AssistantsModule,
+    OpenaiModule,
+    UserModule,
+    MongooseConfigModule,
+    ThreadsModule,
+    MessagesModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
