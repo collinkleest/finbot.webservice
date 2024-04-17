@@ -75,7 +75,9 @@ Nest is [MIT licensed](LICENSE).
 
 ## Model Funds
 The model is trained on the following funds.
-- VOO Vanguard S&P 500 ETF
-- BND Vanguard Total Bond Market ETF
-- VMEX FTSE BIVA Mexico Equity ETF
-- 
+- VOO Vanguard S&P 500 ETF (South America)
+- BND Vanguard Total Bond Market ETF (Mexico)
+- VMEX FTSE BIVA Mexico Equity ETF (Mexico)
+- VSB Canadian Short-Term Bond Index ETF (Canada)
+- VEQT All-Equity ETF Portfolio (Canada)
+- VIC100 Vanguard Global Balanced Fund Series F Instrument Symbol (Canada)
