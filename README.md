@@ -22,6 +22,21 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+## Model Funds
+The model is trained on the following funds.
+- VOO Vanguard S&P 500 ETF (South America)
+- BND Vanguard Total Bond Market ETF (Mexico)
+- VMEX FTSE BIVA Mexico Equity ETF (Mexico)
+- VSB Canadian Short-Term Bond Index ETF (Canada)
+- VEQT All-Equity ETF Portfolio (Canada)
+- VIC100 Vanguard Global Balanced Fund Series F Instrument Symbol (Canada)
+
+## Environment
+Make sure to set the api key for open ai.
+```bash
+$ export OPENAI_API_KEY=
+```
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
@@ -73,11 +88,3 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 Nest is [MIT licensed](LICENSE).
 
 
-## Model Funds
-The model is trained on the following funds.
-- VOO Vanguard S&P 500 ETF (South America)
-- BND Vanguard Total Bond Market ETF (Mexico)
-- VMEX FTSE BIVA Mexico Equity ETF (Mexico)
-- VSB Canadian Short-Term Bond Index ETF (Canada)
-- VEQT All-Equity ETF Portfolio (Canada)
-- VIC100 Vanguard Global Balanced Fund Series F Instrument Symbol (Canada)
