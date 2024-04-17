@@ -3,6 +3,7 @@ import OpenAI from 'openai';
 import { Run } from 'openai/resources/beta/threads/runs/runs';
 import { Thread } from 'openai/resources/beta/threads/threads';
 import { Role } from 'src/common';
+import { env } from 'src/env';
 import { OpenaiService } from 'src/openai/openai.service';
 import { UserService } from 'src/user/user.service';
 
@@ -38,7 +39,7 @@ export class ThreadsService {
     content: string,
   ): Promise<Run> {
     const run = await this.client.beta.threads.createAndRun({
-      assistant_id: 'asst_xkE4TnKNEmAFwOkEZK0NWjox',
+      assistant_id: env.assistant_id,
       thread: {
         messages: [{ role: role, content: content }],
       },

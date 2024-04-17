@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import OpenAI from 'openai';
 import { Run } from 'openai/resources/beta/threads/runs/runs';
+import { env } from 'src/env';
 import { OpenaiService } from 'src/openai/openai.service';
 
 @Injectable()
@@ -20,7 +21,7 @@ export class MessagesService {
       role: role,
     });
     const run = await this.client.beta.threads.runs.create(threadId, {
-      assistant_id: 'asst_xkE4TnKNEmAFwOkEZK0NWjox',
+      assistant_id: env.assistant_id,
     });
     return run;
   }
