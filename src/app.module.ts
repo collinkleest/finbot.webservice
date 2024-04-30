@@ -7,8 +7,8 @@ import { UserModule } from './user/user.module';
 import { MongooseConfigModule } from './mongoose/mongoose.module';
 import { ThreadsModule } from './threads/threads.module';
 import { MessagesModule } from './messages/messages.module';
-import { ChatModule } from './chat/chat.module';
 import { HealthModule } from './health/health.module';
+import { ChatModule } from './chat/chat.module';
 
 @Module({
   imports: [
@@ -18,8 +18,8 @@ import { HealthModule } from './health/health.module';
     MongooseConfigModule,
     ThreadsModule,
     MessagesModule,
-    ChatModule,
     HealthModule,
+    ChatModule
   ],
   controllers: [AppController],
   providers: [AppService],
