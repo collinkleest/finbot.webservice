@@ -38,6 +38,7 @@ export class ChatService {
   }
 
   async createNewChat(userId: string, content: string) {
+    console.log('create new chat', userId, content)
     const run = await this.threadsService.createThreadAndRun(
       userId,
       'user',
@@ -49,6 +50,7 @@ export class ChatService {
         run.thread_id,
         run.id,
       );
+      console.log(run.thread_id)
       isFinished = this.isRunFinished(currRun);
       if (!isFinished) {
         await new Promise((resolve) => setTimeout(resolve, 200));
