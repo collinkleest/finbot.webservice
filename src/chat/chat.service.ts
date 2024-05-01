@@ -37,6 +37,10 @@ export class ChatService {
     return await this.messagesService.getMessages(threadId);
   }
 
+  async streamExistingChat(threadId: string, content: string): Promise<string> {
+    return this.messagesService.processStream(threadId, content, 'user')
+  }
+
   async createNewChat(userId: string, content: string) {
     const run = await this.threadsService.createThreadAndRun(
       userId,

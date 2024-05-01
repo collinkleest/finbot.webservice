@@ -42,20 +42,50 @@ export class ChatGateway
 
   @SubscribeMessage('ping')
   handleMessage(
+<<<<<<< Updated upstream
     userId: string,
     data: { threadId?: string, message: string; }
   ): Observable<WsResponse<CursorPage<Message>>> {
     this.logger.log(`Message received from user id: ${userId}`);
     this.logger.debug(`Payload: ${data}`);
+=======
+    clinet: any,
+    data: { userId: string, message: string, threadId?: string,  }
+  ): Observable<WsResponse<string>> {
+    this.logger.log(`Message received from user id: ${data.userId}`);
+    this.logger.debug(`Payload: userId: ${data.userId}, message: ${data.message}`);
+    
+
+    // if (data.threadId) {
+    //   return from(this.chatService.updateExistingChat(data.threadId, data.message)).pipe(
+    //     map((message) => ({
+    //       event: `ping:${data.userId}`,
+    //       data: message,
+    //     }))
+    //   );
+    // }
+
+    // return from(this.chatService.createNewChat(data.userId, data.message)).pipe(
+    //   map((message) => (
+    //     {
+    //     event: `ping:${data.userId}`,
+    //     data: message,
+    //   }))
+    // );
+    
+
+    this.chatService.streamExistingChat(data.threadId, data.message)
+>>>>>>> Stashed changes
 
     if (data.threadId) {
-      return from(this.chatService.updateExistingChat(data.threadId, data.message)).pipe(
+      return from(this.chatService.streamExistingChat(data.threadId, data.message)).pipe(
         map((message) => ({
           event: `ping:${userId}`,
           data: message,
         }))
       );
     }
+<<<<<<< Updated upstream
 
     return from(this.chatService.createNewChat(userId, data.message)).pipe(
       map((message) => ({
@@ -64,5 +94,7 @@ export class ChatGateway
       }))
     );
     
+=======
+>>>>>>> Stashed changes
   }
 }
