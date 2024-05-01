@@ -43,15 +43,15 @@ export class ChatGateway
   @SubscribeMessage('ping')
   handleMessage(
     clinet: any,
-    data: { userId: string, message: string, threadId?: string,  }
+    data: { userId: string, message: string, clientId: string, threadId?: string,  }
   ): Observable<WsResponse<CursorPage<Message>>> {
-    this.logger.log(`Message received from user id: ${data.userId}`);
+    this.logger.log(`Message received from client id: ${data.clientId}`);
     this.logger.debug(`Payload: userId: ${data.userId}, message: ${data.message}`);
 
     if (data.threadId) {
       return from(this.chatService.updateExistingChat(data.threadId, data.message)).pipe(
         map((message) => ({
-          event: `ping:${data.userId}`,
+          event: `ping:${data.clientId}`,
           data: message,
         }))
       );
@@ -60,7 +60,7 @@ export class ChatGateway
     return from(this.chatService.createNewChat(data.userId, data.message)).pipe(
       map((message) => (
         {
-        event: `ping:${data.userId}`,
+        event: `ping:${data.clientId}`,
         data: message,
       }))
     );
