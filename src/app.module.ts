@@ -9,6 +9,7 @@ import { ThreadsModule } from './threads/threads.module';
 import { MessagesModule } from './messages/messages.module';
 import { HealthModule } from './health/health.module';
 import { ChatModule } from './chat/chat.module';
+import { FilesModule } from './files/files.module';
 
 @Module({
   imports: [
@@ -19,7 +20,8 @@ import { ChatModule } from './chat/chat.module';
     ThreadsModule,
     MessagesModule,
     HealthModule,
-    ChatModule
+    ChatModule,
+    FilesModule
   ],
   controllers: [AppController],
   providers: [AppService],
