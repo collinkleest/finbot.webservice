@@ -14,7 +14,7 @@ import { map } from 'rxjs/internal/operators/map';
 import { Server } from 'socket.io';
 import { ChatService } from 'src/chat/chat.service';
 import { CursorPage } from 'openai/pagination';
-import { Message } from 'openai/resources/beta/threads/messages/messages';
+import { Message } from 'openai/resources/beta/threads/messages';
 
 @WebSocketGateway(80, { cors: true })
 export class ChatGateway
