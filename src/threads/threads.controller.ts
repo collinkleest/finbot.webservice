@@ -12,6 +12,11 @@ export class ThreadsController {
     return this.threadService.createEmptyThread(userId);
   }
 
+  @Post('delete')
+  async deleteThread(@Query('userId') userId: string, @Query('threadId') threadId: string): Promise<any> {
+    return this.threadService.deleteThread(userId, threadId);
+  }
+
   @Get()
   async getThreads(@Query('threadIds') threadIds: string): Promise<Thread[]> {
     const threadIdsParsed = threadIds.split(',');

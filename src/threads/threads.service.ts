@@ -24,6 +24,14 @@ export class ThreadsService {
     return thread;
   }
 
+  async deleteThread(_userId: string, threadId: string): Promise<string[]> {
+    const user = await this.userService.findById(_userId);
+    const newThreadList = user.threads.filter((thread) => thread !== threadId)
+
+    await user.updateOne({ threads: [...newThreadList] });
+    return newThreadList;
+  }
+
   async retrieveThreads(threadIds: string[]): Promise<Thread[]> {
     const threads = [];
     for (const threadId of threadIds) {
